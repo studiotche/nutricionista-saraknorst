@@ -26,15 +26,16 @@
 
 :root {
   --ink: #171510;
-  --muted: #6c6962;
+  --muted: #58544d;
   --cream: #eae2d0;
   --paper: #f8f3e9;
-  --sage: #4a8064;
+  --sage: #3d6b52;
   --sage-dark: #044925;
-  --sage-tint: #90af92;
+  --sage-tint: #a3c0a5;
   --terracotta: #81502a;
   --terracotta-deep: #81502a;
-  --gold: #a58f54;
+  --terracotta-light: #d1996f;
+  --gold: #c9b078;
   --line: rgba(23, 21, 16, 0.15);
   --white: #ffffff;
   --serif: "Newsreader", Georgia, serif;
@@ -234,7 +235,7 @@ summary:focus-visible {
   justify-content: center;
   text-align: center;
   color: var(--sage);
-  border-bottom: 1px solid rgba(74, 128, 100, .4);
+  border-bottom: 1px solid rgba(61, 107, 82, .4);
   padding-block: 6px;
   font-weight: 600;
 }
@@ -347,6 +348,11 @@ summary:focus-visible {
 
 .highlight {
   color: var(--terracotta);
+}
+
+.hero h1 .highlight,
+.about-copy h2 .highlight {
+  color: var(--terracotta-light);
 }
 
 .contact-card h2 .highlight {
@@ -1148,7 +1154,7 @@ summary:focus-visible {
   gap: 30px;
   padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, .12);
-  color: rgba(255, 255, 255, .5);
+  color: rgba(255, 255, 255, .62);
   font-size: .75rem;
 }
 
