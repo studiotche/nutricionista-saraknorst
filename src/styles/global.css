@@ -668,7 +668,7 @@ summary:focus-visible {
 }
 
 .service-card:last-child {
-  grid-column: 1 / -1;
+  grid-column: span 2;
   min-height: 280px;
   border-right: 0;
 }
@@ -864,7 +864,7 @@ summary:focus-visible {
 
 .locations-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   border-block: 1px solid var(--line);
 }
 
@@ -1366,11 +1366,6 @@ body.menu-open {
 
   .location-card:nth-child(2) {
     border-right: 0;
-  }
-
-  .location-card:last-child {
-    grid-column: 1 / -1;
-    border-top: 1px solid var(--line);
   }
 }
 
