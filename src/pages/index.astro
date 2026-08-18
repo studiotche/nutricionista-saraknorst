@@ -22,16 +22,16 @@ const jsonLd = {
       name: `${site.role} ${site.name}`,
       jobTitle: site.role,
       url: site.seo.url,
-      image: `${site.seo.url}/images/nutricionista-ivoti-hero-gladis.webp`,
+      image: `${site.seo.url}/images/nutricionista-ivoti-hero-sara.webp`,
       telephone: `+${site.phoneLink}`,
-      sameAs: [site.googleProfile],
-      areaServed: ["Ivoti", "Estância Velha", "Atendimento online"],
-      workLocation: locations.slice(0, 2).map((location) => ({
+      sameAs: [site.googleProfile, site.instagram],
+      areaServed: ["Ivoti", "Atendimento online"],
+      workLocation: locations.slice(0, 1).map((location) => ({
         "@type": "Place",
         name: `Consultório em ${location.city}`,
         address: {
           "@type": "PostalAddress",
-          streetAddress: location.address.replace(" · sala 209", ", sala 209"),
+          streetAddress: location.address.replace(" · sala 06", ", sala 06"),
           addressLocality: location.city,
           addressRegion: site.state,
           addressCountry: "BR",
@@ -42,17 +42,32 @@ const jsonLd = {
       "@type": "MedicalBusiness",
       "@id": `${site.seo.url}/#medicalbusiness`,
       name: `${site.role} ${site.name}`,
-      image: `${site.seo.url}/images/nutricionista-ivoti-hero-gladis.webp`,
+      image: `${site.seo.url}/images/nutricionista-ivoti-hero-sara.webp`,
       telephone: `+${site.phoneLink}`,
       priceRange: "$$",
       medicalSpecialty: "Nutrition",
-      areaServed: ["Ivoti", "Estância Velha", "Vale do Sinos"],
-      location: locations.slice(0, 2).map((location) => ({
+      sameAs: [site.instagram],
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "09:00",
+          closes: "20:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "Saturday",
+          opens: "08:00",
+          closes: "17:00",
+        },
+      ],
+      areaServed: ["Ivoti", "Vale do Sinos"],
+      location: locations.slice(0, 1).map((location) => ({
         "@type": "Place",
         name: `Consultório em ${location.city}`,
         address: {
           "@type": "PostalAddress",
-          streetAddress: location.address.replace(" · sala 209", ", sala 209"),
+          streetAddress: location.address.replace(" · sala 06", ", sala 06"),
           addressLocality: location.city,
           addressRegion: site.state,
           addressCountry: "BR",
@@ -144,7 +159,7 @@ const jsonLd = {
         aria-label="Fechar menu"><span aria-hidden="true">✕</span></button
       >
       <div class="menu-panel-head">
-        <span class="menu-brand">Gladis Feldmann</span><small class="kicker"
+        <span class="menu-brand">Sara Knorst</span><small class="kicker"
           >Nutricionista</small
         >
       </div>
@@ -174,7 +189,7 @@ const jsonLd = {
           />
           <img
             src={asset(site.assets.hero)}
-            alt="Nutricionista Gladis Feldmann em consultório, atendimento em Ivoti e Estância Velha"
+            alt="Nutricionista Sara Knorst em consultório, atendimento em Ivoti e online"
             width="1717"
             height="916"
             fetchpriority="high"
@@ -206,7 +221,7 @@ const jsonLd = {
         </div>
         <div class="location-note">
           <span class="location-dot" aria-hidden="true"></span><span
-            >Presencial em Ivoti e Estância Velha · Online</span
+            >Presencial em Ivoti · Online</span
           >
         </div>
       </div>
@@ -361,14 +376,14 @@ const jsonLd = {
           <div class="image-frame about-frame">
             <img
               src={asset(site.assets.about)}
-              alt="Nutricionista Gladis Feldmann em ambiente profissional com luz natural"
+              alt="Nutricionista Sara Knorst em ambiente profissional com luz natural"
               width="1122"
               height="1402"
               loading="lazy"
             />
           </div>
           <div class="signature-card" aria-hidden="true">
-            <span>GF</span><small>cuidado em cada escolha</small>
+            <span>SK</span><small>estratégia que cabe na sua vida</small>
           </div>
         </div>
         <div class="about-copy">
@@ -480,6 +495,8 @@ const jsonLd = {
           </h2>
         </div><div class="contact-details">
           <p><span>Modalidades</span><strong>Presencial e online</strong></p><p>
+            <span>Horários</span><strong>Ter–Sex 09h–20h · Sáb 08h–17h</strong>
+          </p><p>
             <span>WhatsApp</span><strong>{site.phoneDisplay}</strong>
           </p><p>
             <span>Telefone</span><strong
@@ -491,7 +508,7 @@ const jsonLd = {
             href={whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            >Falar com Gladis <span aria-hidden="true">↗</span></a
+            >Falar com Sara <span aria-hidden="true">↗</span></a
           >
         </div>
       </div>
@@ -505,8 +522,8 @@ const jsonLd = {
             Encontre o <span class="highlight">consultório</span> para sua consulta
           </h2>
           <p>
-            Os atendimentos presenciais acontecem em dois endereços no Vale do
-            Sinos, com a mesma atenção e cuidado em ambos.
+            Os atendimentos presenciais acontecem em Ivoti, com a mesma
+            atenção e cuidado no acompanhamento online.
           </p>
           <ul class="map-addresses">
             {
@@ -530,7 +547,7 @@ const jsonLd = {
         <div class="map-frame">
           <iframe
             src={site.mapsEmbedUrl}
-            title="Mapa do consultório da nutricionista Gladis Feldmann em Ivoti"
+            title="Mapa do consultório da nutricionista Sara Knorst em Ivoti"
             loading="lazy"
             allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -547,10 +564,12 @@ const jsonLd = {
         width="205"
         height="65"
       /><p>
-        Atendimento nutricional presencial em Ivoti e Estância Velha, RS, e
-        consultas online.
+        Atendimento nutricional presencial em Ivoti, RS, e consultas online.
       </p><div class="footer-links">
-        <a href={site.telLink}>Ligar: {site.phoneDisplay}</a><a href="#inicio"
+        <a href={site.telLink}>Ligar: {site.phoneDisplay}</a
+        ><a href={site.instagram} target="_blank" rel="noreferrer"
+          >Instagram @nutri.saraknorst</a
+        ><a href="#inicio"
           >Voltar ao início ↑</a
         >
       </div>
@@ -579,7 +598,7 @@ const jsonLd = {
     href={whatsappUrl}
     target="_blank"
     rel="noreferrer"
-    aria-label="Olá, Nutri Gladis! Quero mais informações sobre as consultas."
+    aria-label="Olá, Nutri Sara! Quero mais informações sobre as consultas."
   >
     <img src={asset("/images/whatsapp.webp")} alt="" width="34" height="34" />
   </a>
