@@ -8,10 +8,11 @@ interface Props {
 }
 
 const { title = site.seo.title, description = site.seo.description } = Astro.props;
-const path = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
-const canonical = new URL(`/${path}`, site.seo.url);
+const path = Astro.url.pathname.replace(import.meta.env.BASE_URL, "").replace(/^\//, "");
+const canonical = new URL(path, site.seo.url);
 const preview = import.meta.env.PUBLIC_SITE_PREVIEW === "true";
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+const ogImage = new URL(site.seo.ogImage.replace(/^\//, ""), site.seo.url);
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -45,7 +46,7 @@ const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL(site.seo.ogImage, site.seo.url)} />
+    <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <slot name="head" />
   </head>
