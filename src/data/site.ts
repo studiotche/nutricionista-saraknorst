@@ -25,7 +25,7 @@ export const site = {
     title: "Nutricionista em Ivoti | Sara Knorst · Emagrecimento Feminino",
     description:
       "Nutricionista em Ivoti com foco em emagrecimento feminino. Acompanhamento estratégico, prático e sem dietas restritivas, presencial e online.",
-    url: "https://nutrisaraknorst.pages.dev",
+    url: "https://studiotche.github.io/saraknorst/",
     ogImage: "/images/nutricionista-ivoti-hero-sara.webp",
   },
   hero: {
